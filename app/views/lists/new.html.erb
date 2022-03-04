@@ -1,0 +1,27 @@
+<h1>New lists</h1>
+<%= form_with model:@list do |form| %>
+    <% if @list.errors.any? %>
+        <div>
+            <ul>
+                <% @list.errors.full_messages.each do |message| %>
+                    <li><%= message %></li>
+                <% end %>
+            </ul>
+        </div>
+    <% end %>
+    <div>
+        <%= form.label :content %><br>
+        <%= form.text_field :content %>
+    </div>
+    
+    <div>
+        <%= form.label :compeleted %><br>
+        <%= form.check_box :compeleted, {}, "finished", "false"  %>
+    </div><br>
+    
+    <div>
+        <%= form.submit :class => "btn btn-primary"%>
+    </div>
+<% end %>
+
+<br><%= link_to 'top', lists_path, :class => "btn btn-outline-dark" %>

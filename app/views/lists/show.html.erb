@@ -1,0 +1,22 @@
+
+<%=  flash[:success] %>
+<h1>Show</h1>
+
+<table  class="table table-primary" style= "width: 300px">
+    
+    <tr>
+        <th>Content:</th>
+        <th><p>・<%= @list.content %></p></th>
+        
+    </tr>
+    <tr>
+        <th>Completed:</th>
+        <% if @list.compeleted %>
+            <th><p>・finished</p></th>
+        <% else %>
+            <th><p>・ in progress ...</p></th>
+        <% end %>
+    </tr>
+</table>
+
+<%= link_to 'top', lists_path, :class => "btn btn-primary btn-lg"%>
